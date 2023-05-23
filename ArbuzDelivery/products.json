@@ -1,0 +1,254 @@
+{
+  "fruits": [
+    {
+      "name": "Apple",
+      "price": 0.99,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "apple",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Banana",
+      "price": 0.49,
+      "availability": true,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "banana",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Orange",
+      "price": 0.79,
+      "availability": false,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "orange",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Strawberry",
+      "price": 1.99,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "strawberry",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Grapes",
+      "price": 2.49,
+      "availability": true,
+      "amount": 500,
+      "unit": "grams",
+      "imageLink": "grapes",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Mango",
+      "price": 1.79,
+      "availability": true,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "mango",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Watermelon",
+      "price": 3.99,
+      "availability": true,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "watermelon",
+      "countable": true,
+      "small": "7-9kg",
+      "medium": "10-12kg",
+      "large": "13-16kg"
+    }
+  ],
+  "vegetables": [
+    {
+      "name": "Carrot",
+      "price": 0.99,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "carrot",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Broccoli",
+      "price": 1.49,
+      "availability": true,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "broccoli",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Tomato",
+      "price": 0.79,
+      "availability": false,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "tomato",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Potato",
+      "price": 2.99,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "potato",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Bell Pepper",
+      "price": 1.99,
+      "availability": true,
+      "amount": 1,
+      "unit": "piece",
+      "imageLink": "bellPepper",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Onion",
+      "price": 2.49,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "onion",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    },
+    {
+      "name": "Cucumber",
+      "price": 1.79,
+      "availability": true,
+      "amount": 250,
+      "unit": "grams",
+      "imageLink": "cucumber",
+      "countable": false,
+      "small": "",
+      "medium": "",
+      "large": ""
+    }
+  ],
+  "milkProducts": [
+      {
+        "name": "Milk",
+        "price": 2.99,
+        "availability": true,
+        "amount": 1,
+        "unit": "liter",
+        "imageLink": "milk",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      {
+        "name": "Cheese",
+        "price": 4.99,
+        "availability": true,
+        "amount": 200,
+        "unit": "grams",
+        "imageLink": "cheese",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      {
+        "name": "Yogurt",
+        "price": 1.49,
+        "availability": true,
+        "amount": 150,
+        "unit": "grams",
+        "imageLink": "yogurt",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      {
+        "name": "Butter",
+        "price": 2.49,
+        "availability": true,
+        "amount": 250,
+        "unit": "grams",
+        "imageLink": "butter",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      {
+        "name": "Cream",
+        "price": 2.79,
+        "availability": true,
+        "amount": 250,
+        "unit": "grams",
+        "imageLink": "cream",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      {
+        "name": "Condensed Milk",
+        "price": 1.99,
+        "availability": false,
+        "amount": 400,
+        "unit": "grams",
+        "imageLink": "condensedMilk",
+        "countable": false,
+        "small": "",
+        "medium": "",
+        "large": ""
+      }
+    ]
+  
+}
+
+  
+
+
+

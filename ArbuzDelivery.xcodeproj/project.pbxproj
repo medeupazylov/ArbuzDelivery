@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE26CDCB2A1A5EA40080A3A9 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26CDCA2A1A5EA40080A3A9 /* CartTableViewCell.swift */; };
+		DE3883992A17816B00580B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883982A17816B00580B26 /* AppDelegate.swift */; };
+		DE38839B2A17816B00580B26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38839A2A17816B00580B26 /* SceneDelegate.swift */; };
+		DE3883A32A17816B00580B26 /* ArbuzDelivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE3883A12A17816B00580B26 /* ArbuzDelivery.xcdatamodeld */; };
+		DE3883A52A17816D00580B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3883A42A17816D00580B26 /* Assets.xcassets */; };
+		DE3883A82A17816D00580B26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3883A62A17816D00580B26 /* LaunchScreen.storyboard */; };
+		DE3883B02A1782A000580B26 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883AF2A1782A000580B26 /* TabBar.swift */; };
+		DE3883B22A17836700580B26 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883B12A17836700580B26 /* HomeView.swift */; };
+		DE3883B42A178E2500580B26 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883B32A178E2500580B26 /* CartView.swift */; };
+		DE3883B62A178E4500580B26 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883B52A178E4500580B26 /* SubscriptionView.swift */; };
+		DE3883B82A17918800580B26 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883B72A17918800580B26 /* SearchBarView.swift */; };
+		DE3883BE2A17919600580B26 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3883B92A17919600580B26 /* Montserrat-SemiBold.ttf */; };
+		DE3883BF2A17919600580B26 /* MontserratFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883BA2A17919600580B26 /* MontserratFont.swift */; };
+		DE3883C02A17919600580B26 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3883BB2A17919600580B26 /* Montserrat-VariableFont_wght.ttf */; };
+		DE3883C12A17919600580B26 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3883BC2A17919600580B26 /* Montserrat-Bold.ttf */; };
+		DE3883C22A17919600580B26 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3883BD2A17919600580B26 /* Montserrat-Medium.ttf */; };
+		DE3883C52A17A32900580B26 /* TypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883C42A17A32900580B26 /* TypeButton.swift */; };
+		DE3883C72A17E53500580B26 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883C62A17E53500580B26 /* ProductCardView.swift */; };
+		DE3883C92A18BCD700580B26 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883C82A18BCD700580B26 /* SectionView.swift */; };
+		DE3883CC2A18FBAF00580B26 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883CB2A18FBAF00580B26 /* HomePresenter.swift */; };
+		DE3883CE2A18FBBF00580B26 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883CD2A18FBBF00580B26 /* HomeModel.swift */; };
+		DE3883D02A18FDE900580B26 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3883CF2A18FDE900580B26 /* products.json */; };
+		DE3883D22A190ED300580B26 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883D12A190ED300580B26 /* ProductModel.swift */; };
+		DE3883D42A1A1B2800580B26 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883D32A1A1B2800580B26 /* CartPresenter.swift */; };
+		DE3883D62A1A1B3500580B26 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3883D52A1A1B3500580B26 /* CartModel.swift */; };
+		DE45C79C2A1BAAFF00849007 /* SubscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C79B2A1BAAFF00849007 /* SubscriptView.swift */; };
+		DE45C79E2A1BB21700849007 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C79D2A1BB21700849007 /* CustomTextField.swift */; };
+		DE45C7A02A1BBC9900849007 /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C79F2A1BBC9900849007 /* DayButton.swift */; };
+		DE45C7A32A1C9EDD00849007 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7A22A1C9EDD00849007 /* AddressView.swift */; };
+		DE45C7A52A1CC7B500849007 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7A42A1CC7B500849007 /* ConfirmView.swift */; };
+		DE45C7A72A1CD6AB00849007 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7A62A1CD6AB00849007 /* AddressModel.swift */; };
+		DE45C7A92A1CD77F00849007 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7A82A1CD77F00849007 /* DateModel.swift */; };
+		DE45C7AC2A1CE6F700849007 /* SubscriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7AB2A1CE6F700849007 /* SubscriptModel.swift */; };
+		DE45C7AF2A1CE90500849007 /* SubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7AE2A1CE90500849007 /* SubscriptionPresenter.swift */; };
+		DE45C7B12A1CE91300849007 /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7B02A1CE91300849007 /* SubscriptionModel.swift */; };
+		DE45C7B32A1CEA4100849007 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7B22A1CEA4100849007 /* ProfileView.swift */; };
+		DE45C7B52A1CFC8800849007 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7B42A1CFC8800849007 /* SubscriptionTableViewCell.swift */; };
+		DE45C7B72A1D213000849007 /* ChooseSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45C7B62A1D213000849007 /* ChooseSizeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE26CDCA2A1A5EA40080A3A9 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		DE3883952A17816B00580B26 /* ArbuzDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArbuzDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE3883982A17816B00580B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE38839A2A17816B00580B26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE3883A22A17816B00580B26 /* ArbuzDelivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArbuzDelivery.xcdatamodel; sourceTree = "<group>"; };
+		DE3883A42A17816D00580B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE3883A72A17816D00580B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE3883A92A17816D00580B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE3883AF2A1782A000580B26 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		DE3883B12A17836700580B26 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DE3883B32A178E2500580B26 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		DE3883B52A178E4500580B26 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		DE3883B72A17918800580B26 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		DE3883B92A17919600580B26 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE3883BA2A17919600580B26 /* MontserratFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MontserratFont.swift; sourceTree = "<group>"; };
+		DE3883BB2A17919600580B26 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		DE3883BC2A17919600580B26 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DE3883BD2A17919600580B26 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DE3883C42A17A32900580B26 /* TypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButton.swift; sourceTree = "<group>"; };
+		DE3883C62A17E53500580B26 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		DE3883C82A18BCD700580B26 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		DE3883CB2A18FBAF00580B26 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		DE3883CD2A18FBBF00580B26 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		DE3883CF2A18FDE900580B26 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		DE3883D12A190ED300580B26 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		DE3883D32A1A1B2800580B26 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		DE3883D52A1A1B3500580B26 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		DE45C79B2A1BAAFF00849007 /* SubscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptView.swift; sourceTree = "<group>"; };
+		DE45C79D2A1BB21700849007 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DE45C79F2A1BBC9900849007 /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
+		DE45C7A22A1C9EDD00849007 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		DE45C7A42A1CC7B500849007 /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
+		DE45C7A62A1CD6AB00849007 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		DE45C7A82A1CD77F00849007 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+		DE45C7AB2A1CE6F700849007 /* SubscriptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptModel.swift; sourceTree = "<group>"; };
+		DE45C7AE2A1CE90500849007 /* SubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPresenter.swift; sourceTree = "<group>"; };
+		DE45C7B02A1CE91300849007 /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
+		DE45C7B22A1CEA4100849007 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DE45C7B42A1CFC8800849007 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		DE45C7B62A1D213000849007 /* ChooseSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSizeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE3883922A17816B00580B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE38838C2A17816B00580B26 = {
+			isa = PBXGroup;
+			children = (
+				DE3883972A17816B00580B26 /* ArbuzDelivery */,
+				DE3883962A17816B00580B26 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE3883962A17816B00580B26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883952A17816B00580B26 /* ArbuzDelivery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE3883972A17816B00580B26 /* ArbuzDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883AF2A1782A000580B26 /* TabBar.swift */,
+				DE45C7AA2A1CD87B00849007 /* Models */,
+				DE45C7992A1B984800849007 /* Home */,
+				DE45C79A2A1B985100849007 /* Cart */,
+				DE45C7AD2A1CE8D300849007 /* Subscription */,
+				DE3883CA2A18F9D000580B26 /* CustomViews */,
+				DE3883982A17816B00580B26 /* AppDelegate.swift */,
+				DE45C7B22A1CEA4100849007 /* ProfileView.swift */,
+				DE38839A2A17816B00580B26 /* SceneDelegate.swift */,
+				DE3883CF2A18FDE900580B26 /* products.json */,
+				DE3883C32A17A2A000580B26 /* Font */,
+				DE3883A42A17816D00580B26 /* Assets.xcassets */,
+				DE3883A62A17816D00580B26 /* LaunchScreen.storyboard */,
+				DE3883A92A17816D00580B26 /* Info.plist */,
+				DE3883A12A17816B00580B26 /* ArbuzDelivery.xcdatamodeld */,
+			);
+			path = ArbuzDelivery;
+			sourceTree = "<group>";
+		};
+		DE3883C32A17A2A000580B26 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883BC2A17919600580B26 /* Montserrat-Bold.ttf */,
+				DE3883BD2A17919600580B26 /* Montserrat-Medium.ttf */,
+				DE3883B92A17919600580B26 /* Montserrat-SemiBold.ttf */,
+				DE3883BB2A17919600580B26 /* Montserrat-VariableFont_wght.ttf */,
+				DE3883BA2A17919600580B26 /* MontserratFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		DE3883CA2A18F9D000580B26 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE45C7B42A1CFC8800849007 /* SubscriptionTableViewCell.swift */,
+				DE45C7A22A1C9EDD00849007 /* AddressView.swift */,
+				DE45C7A42A1CC7B500849007 /* ConfirmView.swift */,
+				DE45C79D2A1BB21700849007 /* CustomTextField.swift */,
+				DE45C79F2A1BBC9900849007 /* DayButton.swift */,
+				DE26CDCA2A1A5EA40080A3A9 /* CartTableViewCell.swift */,
+				DE3883C82A18BCD700580B26 /* SectionView.swift */,
+				DE3883C42A17A32900580B26 /* TypeButton.swift */,
+				DE3883C62A17E53500580B26 /* ProductCardView.swift */,
+				DE3883B72A17918800580B26 /* SearchBarView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DE45C7992A1B984800849007 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883B12A17836700580B26 /* HomeView.swift */,
+				DE3883CB2A18FBAF00580B26 /* HomePresenter.swift */,
+				DE3883CD2A18FBBF00580B26 /* HomeModel.swift */,
+				DE45C7B62A1D213000849007 /* ChooseSizeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DE45C79A2A1B985100849007 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				DE45C79B2A1BAAFF00849007 /* SubscriptView.swift */,
+				DE3883B32A178E2500580B26 /* CartView.swift */,
+				DE3883D32A1A1B2800580B26 /* CartPresenter.swift */,
+				DE3883D52A1A1B3500580B26 /* CartModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		DE45C7AA2A1CD87B00849007 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883D12A190ED300580B26 /* ProductModel.swift */,
+				DE45C7A62A1CD6AB00849007 /* AddressModel.swift */,
+				DE45C7A82A1CD77F00849007 /* DateModel.swift */,
+				DE45C7AB2A1CE6F700849007 /* SubscriptModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE45C7AD2A1CE8D300849007 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				DE3883B52A178E4500580B26 /* SubscriptionView.swift */,
+				DE45C7AE2A1CE90500849007 /* SubscriptionPresenter.swift */,
+				DE45C7B02A1CE91300849007 /* SubscriptionModel.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE3883942A17816B00580B26 /* ArbuzDelivery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE3883AC2A17816D00580B26 /* Build configuration list for PBXNativeTarget "ArbuzDelivery" */;
+			buildPhases = (
+				DE3883912A17816B00580B26 /* Sources */,
+				DE3883922A17816B00580B26 /* Frameworks */,
+				DE3883932A17816B00580B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArbuzDelivery;
+			productName = ArbuzDelivery;
+			productReference = DE3883952A17816B00580B26 /* ArbuzDelivery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE38838D2A17816B00580B26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					DE3883942A17816B00580B26 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = DE3883902A17816B00580B26 /* Build configuration list for PBXProject "ArbuzDelivery" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE38838C2A17816B00580B26;
+			productRefGroup = DE3883962A17816B00580B26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE3883942A17816B00580B26 /* ArbuzDelivery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE3883932A17816B00580B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE3883C12A17919600580B26 /* Montserrat-Bold.ttf in Resources */,
+				DE3883C02A17919600580B26 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				DE3883D02A18FDE900580B26 /* products.json in Resources */,
+				DE3883BE2A17919600580B26 /* Montserrat-SemiBold.ttf in Resources */,
+				DE3883A82A17816D00580B26 /* LaunchScreen.storyboard in Resources */,
+				DE3883C22A17919600580B26 /* Montserrat-Medium.ttf in Resources */,
+				DE3883A52A17816D00580B26 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE3883912A17816B00580B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE45C7B12A1CE91300849007 /* SubscriptionModel.swift in Sources */,
+				DE3883D42A1A1B2800580B26 /* CartPresenter.swift in Sources */,
+				DE45C7AC2A1CE6F700849007 /* SubscriptModel.swift in Sources */,
+				DE45C7B72A1D213000849007 /* ChooseSizeView.swift in Sources */,
+				DE3883B22A17836700580B26 /* HomeView.swift in Sources */,
+				DE45C79C2A1BAAFF00849007 /* SubscriptView.swift in Sources */,
+				DE45C7A52A1CC7B500849007 /* ConfirmView.swift in Sources */,
+				DE3883BF2A17919600580B26 /* MontserratFont.swift in Sources */,
+				DE45C79E2A1BB21700849007 /* CustomTextField.swift in Sources */,
+				DE26CDCB2A1A5EA40080A3A9 /* CartTableViewCell.swift in Sources */,
+				DE3883B02A1782A000580B26 /* TabBar.swift in Sources */,
+				DE3883C52A17A32900580B26 /* TypeButton.swift in Sources */,
+				DE45C7B32A1CEA4100849007 /* ProfileView.swift in Sources */,
+				DE3883D22A190ED300580B26 /* ProductModel.swift in Sources */,
+				DE3883992A17816B00580B26 /* AppDelegate.swift in Sources */,
+				DE45C7AF2A1CE90500849007 /* SubscriptionPresenter.swift in Sources */,
+				DE3883A32A17816B00580B26 /* ArbuzDelivery.xcdatamodeld in Sources */,
+				DE3883B82A17918800580B26 /* SearchBarView.swift in Sources */,
+				DE3883B62A178E4500580B26 /* SubscriptionView.swift in Sources */,
+				DE45C7A02A1BBC9900849007 /* DayButton.swift in Sources */,
+				DE3883D62A1A1B3500580B26 /* CartModel.swift in Sources */,
+				DE3883C92A18BCD700580B26 /* SectionView.swift in Sources */,
+				DE3883CC2A18FBAF00580B26 /* HomePresenter.swift in Sources */,
+				DE45C7A32A1C9EDD00849007 /* AddressView.swift in Sources */,
+				DE3883CE2A18FBBF00580B26 /* HomeModel.swift in Sources */,
+				DE45C7B52A1CFC8800849007 /* SubscriptionTableViewCell.swift in Sources */,
+				DE45C7A92A1CD77F00849007 /* DateModel.swift in Sources */,
+				DE45C7A72A1CD6AB00849007 /* AddressModel.swift in Sources */,
+				DE3883B42A178E2500580B26 /* CartView.swift in Sources */,
+				DE3883C72A17E53500580B26 /* ProductCardView.swift in Sources */,
+				DE38839B2A17816B00580B26 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE3883A62A17816D00580B26 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE3883A72A17816D00580B26 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE3883AA2A17816D00580B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE3883AB2A17816D00580B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE3883AD2A17816D00580B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29X52XH2TF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArbuzDelivery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devhouse.ArbuzDelivery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE3883AE2A17816D00580B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29X52XH2TF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArbuzDelivery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devhouse.ArbuzDelivery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE3883902A17816B00580B26 /* Build configuration list for PBXProject "ArbuzDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE3883AA2A17816D00580B26 /* Debug */,
+				DE3883AB2A17816D00580B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE3883AC2A17816D00580B26 /* Build configuration list for PBXNativeTarget "ArbuzDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE3883AD2A17816D00580B26 /* Debug */,
+				DE3883AE2A17816D00580B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE3883A12A17816B00580B26 /* ArbuzDelivery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE3883A22A17816B00580B26 /* ArbuzDelivery.xcdatamodel */,
+			);
+			currentVersion = DE3883A22A17816B00580B26 /* ArbuzDelivery.xcdatamodel */;
+			path = ArbuzDelivery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE38838D2A17816B00580B26 /* Project object */;
+}
