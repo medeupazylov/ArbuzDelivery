@@ -21,11 +21,17 @@ protocol CartPresenterProtocol{
 
 class CartPresenter: CartPresenterProtocol {
     
+
+//MARK: - Properties
+    
     private var cartModel: CartModelProtocol
     
     weak var cartView: CartViewProtocol?
     
     weak var tabConnector: TabBarConnectorProtocol?
+    
+    
+//MARK: - Private Methods
     
     init(newCartModel: CartModelProtocol) {
         self.cartModel = newCartModel

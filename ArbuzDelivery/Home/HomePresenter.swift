@@ -1,11 +1,9 @@
 import UIKit
 
-
 protocol HomeViewProtocol: AnyObject {
     func updateProductsInfo(allProductModels: AllProductModels)
     func updateHomeView()
 }
-
 
 
 protocol HomePresenterProtocol {
@@ -19,6 +17,10 @@ protocol HomePresenterProtocol {
 
 class HomePresenter: HomePresenterProtocol {
     
+//MARK: - Properties
+    
+    weak var tabConnector: TabBarConnectorProtocol?
+    
     private var homeModel: HomeModelProtocol
     
     weak var homeView: HomeViewProtocol? {
@@ -27,15 +29,18 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    weak var tabConnector: TabBarConnectorProtocol?
+    
+//MARK: - Lifecycle
     
     init(newHomeModel: HomeModelProtocol) {
         self.homeModel = newHomeModel
         self.homeModel.allProductsModel = getProductData()
     }
+   
     
+//MARK: - Private methods
     
-    func getProductData() -> AllProductModels {
+    private func getProductData() -> AllProductModels {
         if let path = Bundle.main.path(forResource: "products", ofType: "json") {
             do {
                 let url = URL(fileURLWithPath: path)
@@ -48,6 +53,9 @@ class HomePresenter: HomePresenterProtocol {
         }
         return AllProductModels(fruits: [], vegetables: [], milkProducts: [])
     }
+    
+    
+//MARK: - Protocol Methods
     
     func addProductToCart(product: ProductModel) {
         tabConnector?.addProductToCart(product: product)

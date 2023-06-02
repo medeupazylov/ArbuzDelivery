@@ -14,6 +14,8 @@ enum TableViewState {
 
 class SubscriptionView: UIViewController {
     
+//MARK: - Properties
+    
     let subscriptionPresenter: SubscriptionPresenterProtocol
     var currentSubscription: SubscriptModel?
     
@@ -29,7 +31,10 @@ class SubscriptionView: UIViewController {
             }
         }
     }
-    
+
+
+//MARK: - Lifecycle
+
     init(newSubscriptionPresenter: SubscriptionPresenterProtocol) {
         subscriptionPresenter = newSubscriptionPresenter
         super.init(nibName: nil, bundle: nil)
@@ -50,6 +55,8 @@ class SubscriptionView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
+//MARK: - Private Methods
     
     private func setupViews() {
         view.addSubview(container)
@@ -86,18 +93,23 @@ class SubscriptionView: UIViewController {
         ])
     }
     
-    @objc func backButtonAction() {
+    
+//MARK: - Button Actions
+    
+    @objc private func backButtonAction() {
         state = .generalList
     }
     
-    let container: UIView = {
+    
+//MARK: - UI Elements
+    private let container: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     } ()
     
-    let navigationView: UIView = {
+    private let navigationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .orange
@@ -105,7 +117,7 @@ class SubscriptionView: UIViewController {
         return view
     } ()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "My Subscriptions"
@@ -114,7 +126,7 @@ class SubscriptionView: UIViewController {
         return label
     } ()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(SubscriptionTableViewCell.self, forCellReuseIdentifier: "newCell")
@@ -125,7 +137,7 @@ class SubscriptionView: UIViewController {
         return table
     } ()
     
-    let backButton: UIButton = {
+    private let backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
@@ -137,9 +149,15 @@ class SubscriptionView: UIViewController {
     } ()
 }
 
+
+//MARK: - SubscriptionViewProtocol
+
 extension SubscriptionView: SubscriptionViewProtocol {
     
 }
+
+
+//MARK: - UITableViewDelegate
 
 extension SubscriptionView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -153,6 +171,9 @@ extension SubscriptionView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
+
+
+//MARK: - UITableViewDataSource
 
 extension SubscriptionView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

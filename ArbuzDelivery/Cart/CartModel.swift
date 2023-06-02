@@ -57,8 +57,4 @@ struct CartModel: CartModelProtocol {
     mutating func clearCart() {
         cart = []
     }
-    
-    
-        
-
 }

@@ -17,10 +17,6 @@ protocol SubscriptionPresenterProtocol {
 }
 
 class SubscriptonPresenter: SubscriptionPresenterProtocol {
-    func getSubscriptions() -> [SubscriptModel] {
-        return subscriptionModel.subscriptions
-    }
-    
     
     var subscriptionModel: SubscriptionModelProtocol
     weak var subscriptionView: SubscriptionViewProtocol?
@@ -34,5 +30,9 @@ class SubscriptonPresenter: SubscriptionPresenterProtocol {
         subscriptionModel.addSubscription(subscription: subscription)
         print("Added new subscription")
         print(subscriptionModel.subscriptions)
+    }
+    
+    func getSubscriptions() -> [SubscriptModel] {
+        return subscriptionModel.subscriptions
     }
 }

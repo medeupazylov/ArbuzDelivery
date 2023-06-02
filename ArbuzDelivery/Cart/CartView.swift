@@ -9,8 +9,13 @@ import UIKit
 
 class CartView: UIViewController {
     
+    
+//MARK: - Properties
+    
     let cartPresenter: CartPresenterProtocol
 
+    
+//MARK: - Lifecycle
     init(newCartPresenter: CartPresenterProtocol) {
         self.cartPresenter = newCartPresenter
         super.init(nibName: nil, bundle: nil)
@@ -29,7 +34,9 @@ class CartView: UIViewController {
         subscriptButton.addTarget(self, action: #selector(subscriptAction), for: .touchUpInside)
 
     }
+
     
+//MARK: - Private Methods
     private func setupViews() {
         view.addSubview(container)
         container.addSubview(navigationView)
@@ -50,8 +57,6 @@ class CartView: UIViewController {
             navigationView.topAnchor.constraint(equalTo: container.topAnchor),
             navigationView.heightAnchor.constraint(equalToConstant: 115),
             
-           
-            
             titleLabel.centerXAnchor.constraint(equalTo: navigationView.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: navigationView.centerYAnchor, constant: 25.0),
             
@@ -71,12 +76,14 @@ class CartView: UIViewController {
         ])
     }
     
-    func updateView() {
+    private func updateView() {
         noProductLabel.isHidden = cartPresenter.getCartSize() == 0 ? false : true
         subscriptButton.isHidden = cartPresenter.getCartSize() == 0 ? true : false
     }
+
     
-    @objc func subscriptAction() {
+//MARK: - Button Actions
+    @objc private func subscriptAction() {
         let subscriptView = SubscriptView { subscriptModel in
             self.cartPresenter.addSubscription(subscription: subscriptModel)
         }
@@ -88,14 +95,16 @@ class CartView: UIViewController {
         
     }
     
-    let container: UIView = {
+    
+//MARK: - UI Elements
+    private let container: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     } ()
     
-    let navigationView: UIView = {
+    private let navigationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .orange
@@ -103,7 +112,7 @@ class CartView: UIViewController {
         return view
     } ()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "My Cart"
@@ -112,7 +121,7 @@ class CartView: UIViewController {
         return label
     } ()
     
-    let cartTableView: UITableView = {
+    private let cartTableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(CartTableViewCell.self, forCellReuseIdentifier: "reusableCell")
@@ -123,7 +132,7 @@ class CartView: UIViewController {
         return table
     } ()
     
-    let subscriptButton: UIButton = {
+    private let subscriptButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
@@ -141,7 +150,7 @@ class CartView: UIViewController {
         return button
     } ()
     
-    let noProductLabel: UILabel = {
+    private let noProductLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "No products in cart"
@@ -151,6 +160,9 @@ class CartView: UIViewController {
     } ()
 
 }
+
+
+//MARK: - CartViewProtocol
 
 extension CartView: CartViewProtocol {
     func getTotalCost() -> Float {
@@ -164,6 +176,9 @@ extension CartView: CartViewProtocol {
     }
 }
 
+
+//MARK: - UITableViewDelegate
+
 extension CartView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
@@ -171,6 +186,8 @@ extension CartView: UITableViewDelegate {
     
 }
 
+
+//MARK: - UITableViewDataSource
 
 extension CartView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -188,6 +205,8 @@ extension CartView: UITableViewDataSource {
     }
 }
 
+
+//MARK: - CartTableViewCellDelegate
 
 extension CartView: CartTableViewCellDelegate {
     func addProductToCart(product: ProductModel) {

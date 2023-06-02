@@ -19,8 +19,6 @@ final class SearchBarView: UIView {
     }
     
     
-    
-    
     let searchTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "Find the product", attributes: [

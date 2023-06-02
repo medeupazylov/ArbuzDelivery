@@ -9,7 +9,12 @@ import UIKit
 
 class HomeView: UIViewController {
     
+//MARK: - Properties
+    
     let homePresenter: HomePresenterProtocol
+    
+    
+//MARK: - Lifecycle
     
     init(newHomePresenter: HomePresenterProtocol) {
         self.homePresenter = newHomePresenter
@@ -27,6 +32,8 @@ class HomeView: UIViewController {
         setupLayout()
     }
     
+    
+//MARK: - Private methods
     
     private func setupViews() {
         view.addSubview(container)
@@ -93,14 +100,17 @@ class HomeView: UIViewController {
         ])
     }
     
-    let container: UIView = {
+    
+//MARK: - UI Elements
+    
+    private let container: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     } ()
     
-    let navigationView: UIView = {
+    private let navigationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .orange
@@ -108,13 +118,13 @@ class HomeView: UIViewController {
         return view
     } ()
     
-    let searchBar: SearchBarView = {
+    private let searchBar: SearchBarView = {
         let searchBar = SearchBarView()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     } ()
     
-    let greetingView: UILabel = {
+    private let greetingView: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose your fresh product!"
@@ -123,22 +133,21 @@ class HomeView: UIViewController {
         return label
     } ()
     
-    
-    let scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.showsVerticalScrollIndicator = false
         return scroll
     } ()
     
-    let mainStack: UIStackView = {
+    private let mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     } ()
     
-    lazy var fruitsSection: SectionView = {
+    private lazy var fruitsSection: SectionView = {
         let section = SectionView(title: "Fruits", image: UIImage(named: "fruit")!, addAction: { productModel in
             self.homePresenter.addProductToCart(product: productModel)
         }, removeAction: { productModel in
@@ -152,7 +161,7 @@ class HomeView: UIViewController {
         return section
     } ()
     
-    lazy var vegetablesSection: SectionView = {
+    private lazy var vegetablesSection: SectionView = {
         let section = SectionView(title: "Vegetables", image: UIImage(named: "vegetable")!, addAction: { productModel in
             self.homePresenter.addProductToCart(product: productModel)
         }, removeAction: { productModel in
@@ -166,7 +175,7 @@ class HomeView: UIViewController {
         return section
     } ()
     
-    lazy var milkSection: SectionView = {
+    private lazy var milkSection: SectionView = {
         let section = SectionView(title: "Milky Products", image: UIImage(named: "milkProduct")!, addAction: { productModel in
             self.homePresenter.addProductToCart(product: productModel)
         }, removeAction: { productModel in
@@ -182,6 +191,9 @@ class HomeView: UIViewController {
     
 
 }
+
+
+//MARK: - HomeViewProtocol
 
 extension HomeView: HomeViewProtocol {
     func updateHomeView() {

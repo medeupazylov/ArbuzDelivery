@@ -125,9 +125,9 @@
 				DE45C7992A1B984800849007 /* Home */,
 				DE45C79A2A1B985100849007 /* Cart */,
 				DE45C7AD2A1CE8D300849007 /* Subscription */,
+				DEF8C0BE2A29CF3500B9B9CF /* Profile */,
 				DE3883CA2A18F9D000580B26 /* CustomViews */,
 				DE3883982A17816B00580B26 /* AppDelegate.swift */,
-				DE45C7B22A1CEA4100849007 /* ProfileView.swift */,
 				DE38839A2A17816B00580B26 /* SceneDelegate.swift */,
 				DE3883CF2A18FDE900580B26 /* products.json */,
 				DE3883C32A17A2A000580B26 /* Font */,
@@ -209,6 +209,14 @@
 				DE45C7B02A1CE91300849007 /* SubscriptionModel.swift */,
 			);
 			path = Subscription;
+			sourceTree = "<group>";
+		};
+		DEF8C0BE2A29CF3500B9B9CF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE45C7B22A1CEA4100849007 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

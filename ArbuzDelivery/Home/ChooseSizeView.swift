@@ -9,6 +9,8 @@ import UIKit
 
 class ChooseSizeView: UIViewController {
 
+//MARK: - Properties
+    
     let product: ProductModel
     var pressed = false
     var count: Int = 0 {
@@ -21,6 +23,9 @@ class ChooseSizeView: UIViewController {
             }
         }
     }
+
+    
+//MARK: - Lifecycle
     
     init(product: ProductModel) {
         self.product = product
@@ -38,8 +43,10 @@ class ChooseSizeView: UIViewController {
         setupLayout()
     }
 
+
+//MARK: - Private Methods
     
-    func setupView() {
+    private func setupView() {
         view.addSubview(chooseTitle)
         view.addSubview(image)
         view.addSubview(nameLabel)
@@ -58,7 +65,7 @@ class ChooseSizeView: UIViewController {
         removeButton.addTarget(self, action: #selector(removeAction), for: .touchUpInside)
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             chooseTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             chooseTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -109,22 +116,25 @@ class ChooseSizeView: UIViewController {
 
         ])
     }
+
     
-    @objc func addAction() {
+//MARK: - Button Actions
+    
+    @objc private func addAction() {
         if pressed == false {
             return
         }
         count = count + 1
     }
     
-    @objc func removeAction() {
+    @objc private func removeAction() {
         if pressed == false {
             return
         }
         count = count - 1
     }
     
-    @objc func sizeAction(_ sender: DayButton?) {
+    @objc private func sizeAction(_ sender: DayButton?) {
         pressed = true
         if count > 0 {
             return
@@ -136,7 +146,6 @@ class ChooseSizeView: UIViewController {
         medium.didSelect = false
         large.didSelect = false
         sender.didSelect = true
-        
         if sender == small {
             amountLabel.text = product.small
             priceLabel.text = "$" + String(format: "%.2f", (product.price * 0.8) )
@@ -150,26 +159,29 @@ class ChooseSizeView: UIViewController {
             priceLabel.text = "$" + String(format: "%.2f", (product.price * 1.2) )
         }
     }
+ 
     
-    let small: DayButton = {
+//MARK: - UI Elements
+    
+    private let small: DayButton = {
         let button = DayButton(text: "SMALL")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     } ()
     
-    let medium: DayButton = {
+    private let medium: DayButton = {
         let button = DayButton(text: "MEDIUM")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     } ()
     
-    let large: DayButton = {
+    private let large: DayButton = {
         let button = DayButton(text: "LARGE")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     } ()
     
-    let chooseTitle: UILabel = {
+    private let chooseTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose the size for this product"
@@ -179,9 +191,8 @@ class ChooseSizeView: UIViewController {
     } ()
 
     
-    lazy var image: UIImageView = {
+    private lazy var image: UIImageView = {
         let image = UIImageView(image: UIImage(named: product.imageLink ))
-//        let image = UIImageView(image: UIImage(named: "watermelon" ))
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
@@ -189,27 +200,25 @@ class ChooseSizeView: UIViewController {
         return image
     } ()
     
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = product.name
-//        label.text = "Watermelon"
         label.font = MontserratFont.makefont(name: .semibold, size: 20)
         return label
     } ()
     
     
-    lazy var priceLabel: UILabel = {
+    private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "$\(product.price)"
-//        label.text = "$1.99"
         label.textColor = UIColor(red: 204/255, green: 112/255, blue: 0/255, alpha: 1)
         label.font = MontserratFont.makefont(name: .bold, size: 30)
         return label
     } ()
     
-    let addButton: UIButton = {
+    private let addButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
         button.tintColor = UIColor(red: 204/255, green: 112/255, blue: 0/255, alpha: 1)
@@ -219,7 +228,7 @@ class ChooseSizeView: UIViewController {
         return button
     } ()
     
-    let removeButton: UIButton = {
+    private let removeButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "minus.circle"), for: .normal)
         button.tintColor = UIColor(red: 204/255, green: 112/255, blue: 0/255, alpha: 1)
@@ -229,17 +238,16 @@ class ChooseSizeView: UIViewController {
         return button
     } ()
     
-    lazy var amountLabel: UILabel = {
+    private lazy var amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray2
         label.text = "\(Int(product.amount)) \(product.unit)"
-//        label.text = "9-12 kg"
         label.font = MontserratFont.makefont(name: .semibold, size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
     
-    lazy var countLabel: UILabel = {
+    private lazy var countLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.backgroundColor = .orange

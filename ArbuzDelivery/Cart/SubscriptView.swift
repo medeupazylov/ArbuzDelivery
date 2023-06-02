@@ -1,14 +1,4 @@
-//
-//  SubscriptView.swift
-//  ArbuzDelivery
-//
-//  Created by Medeu Pazylov on 22.05.2023.
-//
-
 import UIKit
-
-
-
 
 enum subscriptState {
     case daySelection
@@ -21,71 +11,23 @@ class SubscriptView: UIViewController {
     
     weak var cartView: CartViewProtocol?
     
-    let days = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
-    var daysSelected = [false,false,false,false,false,false,false]
+    private let days = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
+    private var daysSelected = [false,false,false,false,false,false,false]
     
-    let times = ["9:00-12:00","12:00-15:00","15:00-18:00","18:00-21:00"]
-    var timeSelectedIndex = 0
+    private let times = ["9:00-12:00","12:00-15:00","15:00-18:00","18:00-21:00"]
+    private var timeSelectedIndex = 0
     
-    let weeks = ["1 week", "2 weeks","3 weeks","4 weeks","5 weeks","6 weeks","7 weeks","8 weeks","9 weeks"]
-    var weekSelectedIndex = 1
+    private let weeks = ["1 week", "2 weeks","3 weeks","4 weeks","5 weeks","6 weeks","7 weeks","8 weeks","9 weeks"]
+    private var weekSelectedIndex = 1
     
-    var confirmActionClosure: ((SubscriptModel)->Void)?
+    private var confirmActionClosure: ((SubscriptModel)->Void)?
     
-    var state: subscriptState = .daySelection {
+    private var state: subscriptState = .daySelection {
         didSet {
             returnTextFields()
             hideAllViews()
-            if state == .daySelection {
-                dayTitle.isHidden = false
-                dayStack.isHidden = false
-                timeTitle.isHidden = false
-                timeStack.isHidden = false
-            }
-            if state == .periodSelection {
-                backButton.isHidden = false
-                periodTitle.isHidden = false
-                periodPicker.isHidden = false
-            }
-            if state == .addressTyping {
-                addressTitle.isHidden = false
-                addressView.isHidden = false
-                backButton.isHidden = false
-            }
-            if state == .confirming {
-                backButton.isHidden = false
-                continueButton.setAttributedTitle(NSAttributedString(string: "Confirm", attributes: [
-                    NSAttributedString.Key.font : MontserratFont.makefont(name: .semibold, size: 18),
-                    NSAttributedString.Key.foregroundColor : UIColor.white
-                ]), for: .normal)
-                confirmTitle.isHidden = false
-                confirmView.isHidden = false
-                setupConfirmView()
-            }
+            updateState()
         }
-    }
-    
-    func hideAllViews() {
-        dayTitle.isHidden = true
-        dayStack.isHidden = true
-        timeTitle.isHidden = true
-        timeStack.isHidden = true
-        dayMessageLabel.isHidden = true
-        backButton.isHidden = true
-        periodTitle.isHidden = true
-        periodPicker.isHidden = true
-        periodTitle.isHidden = true
-        periodPicker.isHidden = true
-        addressTitle.isHidden = true
-        addressView.isHidden = true
-        addressMessageLabel.isHidden = true
-        confirmTitle.isHidden = true
-        confirmView.isHidden = true
-        continueButton.setAttributedTitle(NSAttributedString(string: "Continue", attributes: [
-            NSAttributedString.Key.font : MontserratFont.makefont(name: .semibold, size: 18),
-            NSAttributedString.Key.foregroundColor : UIColor.white
-        ]), for: .normal)
-        
     }
     
     init(confirmActionClosure: ((SubscriptModel)->Void)?) {
@@ -97,26 +39,18 @@ class SubscriptView: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupLayout()
         setupStack()
         view.backgroundColor = .systemGray6
-//        state = .confirming
         periodPicker.dataSource = self
         periodPicker.delegate = self
     }
     
-    func setupConfirmView() {
-        let date = DateModel(days: daysSelected, time: times[timeSelectedIndex-1], period: weeks[weekSelectedIndex-1])
-        let address = addressView.getAddressInfo()
-        let cost = cartView?.getTotalCost()
-        confirmView.updateInfo(dateInfo: date, address: addressView.getAddressInfo(), totalCost: cost!)
-    }
     
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(dayTitle)
         view.addSubview(timeTitle)
         view.addSubview(dayStack)
@@ -131,12 +65,12 @@ class SubscriptView: UIViewController {
         view.addSubview(addressMessageLabel)
         view.addSubview(confirmTitle)
         view.addSubview(confirmView)
-        
+
         continueButton.addTarget(self, action: #selector(continueButtonAction), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             
             dayTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
@@ -193,7 +127,65 @@ class SubscriptView: UIViewController {
         ])
     }
     
-    func returnTextFields() {
+    private func setupConfirmView() {
+        let date = DateModel(days: daysSelected, time: times[timeSelectedIndex-1], period: weeks[weekSelectedIndex-1])
+        let address = addressView.getAddressInfo()
+        let cost = cartView?.getTotalCost()
+        confirmView.updateInfo(dateInfo: date, address: address, totalCost: cost!)
+    }
+    
+    private func updateState() {
+        if state == .daySelection {
+            dayTitle.isHidden = false
+            dayStack.isHidden = false
+            timeTitle.isHidden = false
+            timeStack.isHidden = false
+        }
+        if state == .periodSelection {
+            backButton.isHidden = false
+            periodTitle.isHidden = false
+            periodPicker.isHidden = false
+        }
+        if state == .addressTyping {
+            addressTitle.isHidden = false
+            addressView.isHidden = false
+            backButton.isHidden = false
+        }
+        if state == .confirming {
+            backButton.isHidden = false
+            continueButton.setAttributedTitle(NSAttributedString(string: "Confirm", attributes: [
+                NSAttributedString.Key.font : MontserratFont.makefont(name: .semibold, size: 18),
+                NSAttributedString.Key.foregroundColor : UIColor.white
+            ]), for: .normal)
+            confirmTitle.isHidden = false
+            confirmView.isHidden = false
+            setupConfirmView()
+        }
+    }
+    
+    private func hideAllViews() {
+        dayTitle.isHidden = true
+        dayStack.isHidden = true
+        timeTitle.isHidden = true
+        timeStack.isHidden = true
+        dayMessageLabel.isHidden = true
+        backButton.isHidden = true
+        periodTitle.isHidden = true
+        periodPicker.isHidden = true
+        periodTitle.isHidden = true
+        periodPicker.isHidden = true
+        addressTitle.isHidden = true
+        addressView.isHidden = true
+        addressMessageLabel.isHidden = true
+        confirmTitle.isHidden = true
+        confirmView.isHidden = true
+        continueButton.setAttributedTitle(NSAttributedString(string: "Continue", attributes: [
+            NSAttributedString.Key.font : MontserratFont.makefont(name: .semibold, size: 18),
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]), for: .normal)
+    }
+    
+    private func returnTextFields() {
         let _ = textFieldShouldReturn(addressView.streetField.textField)
         let _ = textFieldShouldReturn(addressView.houseField.textField)
         let _ = textFieldShouldReturn(addressView.apartmentField.textField)
@@ -203,7 +195,7 @@ class SubscriptView: UIViewController {
         let _ = textFieldShouldReturn(confirmView.nameField.textField)
     }
     
-    func setupStack() {
+    private func setupStack() {
         for day in days {
             let dayButton = DayButton(text: day)
             dayButton.addTarget(self, action: #selector(dayButtonAction), for: .touchUpInside)
@@ -218,7 +210,7 @@ class SubscriptView: UIViewController {
         }
     }
     
-    @objc func dayButtonAction(_ sender: DayButton?) {
+    @objc private func dayButtonAction(_ sender: DayButton?) {
         guard let sender = sender else {
             return
         }
@@ -234,7 +226,7 @@ class SubscriptView: UIViewController {
 
     }
     
-    @objc func timeButtonAction(_ sender: DayButton?) {
+    @objc private func timeButtonAction(_ sender: DayButton?) {
         guard let sender = sender else {
             return
         }
@@ -255,7 +247,7 @@ class SubscriptView: UIViewController {
 
     }
     
-    @objc func backButtonAction() {
+    @objc private func backButtonAction() {
         if state == .periodSelection {
             state = .daySelection
         }
@@ -267,7 +259,7 @@ class SubscriptView: UIViewController {
         }
     }
     
-    @objc func continueButtonAction() {
+    @objc private func continueButtonAction() {
         if state == .daySelection {
             daySelectionAction()
         } else
@@ -283,7 +275,7 @@ class SubscriptView: UIViewController {
         }
     }
     
-    func confirmingAction() {
+    private func confirmingAction() {
         let title = confirmView.nameField.textField.text!
         let date = DateModel(days: daysSelected, time: times[timeSelectedIndex-1], period: weeks[weekSelectedIndex-1])
         let address = addressView.getAddressInfo()
@@ -291,7 +283,7 @@ class SubscriptView: UIViewController {
         confirmActionClosure?(model)
     }
     
-    func addressTypingAction() {
+    private func addressTypingAction() {
         if (addressView.infoIsFilled()==false) {
             if addressMessageLabel.isHidden == true {
                 addressMessageLabel.isHidden = false
@@ -306,7 +298,7 @@ class SubscriptView: UIViewController {
         }
     }
     
-    func daySelectionAction() {
+    private func daySelectionAction() {
         var bool = false
         for item in daysSelected {
             if item == true {
@@ -328,7 +320,7 @@ class SubscriptView: UIViewController {
     }
     
     
-    lazy var addressView: AddressView = {
+    private lazy var addressView: AddressView = {
         let view = AddressView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
@@ -336,14 +328,14 @@ class SubscriptView: UIViewController {
         return view
     } ()
     
-    let periodPicker: UIPickerView = {
+    private let periodPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.isHidden = true
         return picker
     } ()
     
-    let dayTitle: UILabel = {
+    private let dayTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Select delivery day"
@@ -352,7 +344,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    let dayStack: UIStackView = {
+    private let dayStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -360,7 +352,7 @@ class SubscriptView: UIViewController {
         return stack
     } ()
     
-    let timeTitle: UILabel = {
+    private let timeTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Select delivery time"
@@ -369,7 +361,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    let timeStack: UIStackView = {
+    private let timeStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -377,7 +369,7 @@ class SubscriptView: UIViewController {
         return stack
     } ()
     
-    let periodTitle: UILabel = {
+    private let periodTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Select the period for delivery"
@@ -387,7 +379,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    let addressTitle: UILabel = {
+    private let addressTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Enter your address and number"
@@ -398,7 +390,7 @@ class SubscriptView: UIViewController {
     } ()
 
     
-    let continueButton: UIButton = {
+    private let continueButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .orange
@@ -414,7 +406,7 @@ class SubscriptView: UIViewController {
         return button
     } ()
     
-    let backButton: UIButton = {
+    private let backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
@@ -428,7 +420,7 @@ class SubscriptView: UIViewController {
         return button
     } ()
     
-    let dayMessageLabel: UILabel = {
+    private let dayMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "You didn't select day or time"
@@ -438,7 +430,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    let addressMessageLabel: UILabel = {
+    private let addressMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "You didn't fill required fields *"
@@ -448,7 +440,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    let confirmTitle: UILabel = {
+    private let confirmTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Subscription info"
@@ -458,7 +450,7 @@ class SubscriptView: UIViewController {
         return label
     } ()
     
-    lazy var confirmView: ConfirmView = {
+    private lazy var confirmView: ConfirmView = {
         let view = ConfirmView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
@@ -508,5 +500,4 @@ extension SubscriptView: UITextFieldDelegate {
         textField.resignFirstResponder()
         return false
     }
-    
 }
